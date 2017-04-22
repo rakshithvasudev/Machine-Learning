@@ -14,23 +14,27 @@ Y = ['male', 'male', 'female', 'female', 'male', 'male', 'female', 'female',
      'female', 'male', 'male']
 
 
-
+#classify using decision tree classifier 
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(X,Y)
 prediction = clf.predict([[170,70,37]])
 
+#classify using multi-layer perceptron classifier
 clf2 = MLPClassifier()
 clf2 = clf2.fit(X,Y)
 prediction2 = clf2.predict([[170,70,37]])
 
+#classify using K neighbours classifier
 clf3 = KNeighborsClassifier()
 clf3 = clf3.fit(X,Y)
 prediction3 = clf3.predict([[170,70,37]])
 
+#classify using Gaussian Naive Bayes classifier
 clf4 = GaussianNB()
 clf4.fit(X,Y)
 prediction4 = clf4.predict([[170,70,37]])
 
+#print the predicted results
 print ("Decision tree classifer: ",prediction)
 print ("MLPClassifier: ", prediction2)
 print ("KNeighborsClassifier: ",prediction3)
