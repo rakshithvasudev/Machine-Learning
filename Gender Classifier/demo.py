@@ -1,4 +1,4 @@
-from sklearn import MLPClassifier
+from sklearn import tree
 
 # [height, weight, shoe_size]
 X = [[181, 80, 44], [177, 70, 43], [160, 60, 38], [154, 54, 37], [166, 65, 40],
