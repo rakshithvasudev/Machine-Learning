@@ -1,9 +1,9 @@
+import numpy as np
 from sklearn import tree
 from sklearn.neural_network import MLPClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
-
-
+from sklearn.metrics import accuracy_score
 
 # [height, weight, shoe_size]
 X = [[181, 80, 44], [177, 70, 43], [160, 60, 38], [154, 54, 37], [166, 65, 40],
@@ -17,25 +17,40 @@ Y = ['male', 'male', 'female', 'female', 'male', 'male', 'female', 'female',
 #classify using decision tree classifier 
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(X,Y)
-prediction = clf.predict([[170,70,37]])
+prediction = clf.predict(X)
+clfAccuracyScore = accuracy_score(Y,prediction, normalize = False)
 
 #classify using multi-layer perceptron classifier
 clf2 = MLPClassifier()
 clf2 = clf2.fit(X,Y)
-prediction2 = clf2.predict([[170,70,37]])
+prediction2 = clf2.predict(X)
+clfAccuracyScore2 = accuracy_score(Y,prediction2, normalize = False)
+
 
 #classify using K neighbours classifier
 clf3 = KNeighborsClassifier()
 clf3 = clf3.fit(X,Y)
-prediction3 = clf3.predict([[170,70,37]])
+prediction3 = clf3.predict(X)
+clfAccuracyScore3 = accuracy_score(Y,prediction3, normalize = False)
 
 #classify using Gaussian Naive Bayes classifier
 clf4 = GaussianNB()
 clf4.fit(X,Y)
-prediction4 = clf4.predict([[170,70,37]])
+prediction4 = clf4.predict(X)
+clfAccuracyScore4 = accuracy_score(Y,prediction4, normalize = False)
+
+
+#check for accuracy 
+
+
+
+
+
+
 
 #print the predicted results
-print ("Decision tree classifer: ",prediction)
-print ("MLPClassifier: ", prediction2)
-print ("KNeighborsClassifier: ",prediction3)
-print ("GaussianNB: ",prediction4)
+print ("Decision tree classifer: ",prediction, "Having Accuracy score" ,clfAccuracyScore)
+print ("MLPClassifier: ", prediction2, "Having Accuracy score" ,clfAccuracyScore2)
+print ("KNeighborsClassifier: ",prediction3, "Having Accuracy score" ,clfAccuracyScore3)
+print ("GaussianNB: ",prediction4,  "Having Accuracy score" ,clfAccuracyScore4)
+
