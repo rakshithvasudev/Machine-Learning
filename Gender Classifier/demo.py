@@ -40,17 +40,11 @@ prediction4 = clf4.predict(X)
 clfAccuracyScore4 = accuracy_score(Y,prediction4, normalize = False)
 
 
-#check for accuracy 
-
-
-
-
-
-
-
-#print the predicted results
+#check for accuracy and print the predicted results
 print ("Decision tree classifer: ",prediction, "Having Accuracy score" ,clfAccuracyScore)
 print ("MLPClassifier: ", prediction2, "Having Accuracy score" ,clfAccuracyScore2)
 print ("KNeighborsClassifier: ",prediction3, "Having Accuracy score" ,clfAccuracyScore3)
 print ("GaussianNB: ",prediction4,  "Having Accuracy score" ,clfAccuracyScore4)
 
+
+ 
