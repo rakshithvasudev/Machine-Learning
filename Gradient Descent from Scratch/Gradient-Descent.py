@@ -25,13 +25,13 @@ def step_gradient(b_current,m_current, points, learning_rate):
     new_m = m_current - (learning_rate  * m_gradient)
     return [new_b,new_m]
 
-def radient_descent_runner(points, starting_b, starting_m, learning_rate,num_iterations):
+def gradient_descent_runner(points, starting_b, starting_m, learning_rate,num_iterations):
     b = starting_b
     m = starting_m
     
-    for in in range(num_iterations):
+    for i in range(num_iterations):
         b,m = step_gradient(b,m, array(points), learning_rate)
-    return [b,m]    
+    return [b,m]
 
 
 def run():
@@ -44,9 +44,9 @@ def run():
     initial_b = 0
     initial_m = 0
     num_iterations = 1000
-    [b,m] = gradient_descent_runner(points,initial_b,initial_m,learning_rate,num_iterations)
+    [b,m] = gradient_descent_runner(points, initial_b, initial_m, learning_rate, num_iterations)
     print(b)
     print(m)
 
-if __name__ =='__main__':
+if __name__ == '__main__':
     run()
