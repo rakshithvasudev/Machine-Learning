@@ -12,31 +12,6 @@ from keras.wrappers.scikit_learn import KerasClassifier
 from sklearn.model_selection import cross_val_score
 
 
-dataset = pd.read_csv("Datasets/Churn_Modelling.csv")
-dataset.head()
-
-dataset.info()
-
-X = dataset.iloc[:, [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]].values
-
-y = dataset.iloc[:, 13].values
-
-label_enc_X_country = LabelEncoder()
-X[:, 1] = label_enc_X_country.fit_transform(X[:, 1])
-
-label_enc_X_gender = LabelEncoder()
-X[:, 2] = label_enc_X_gender.fit_transform(X[:, 2])
-
-one_hot_enc = OneHotEncoder(categorical_features=[1])
-X = one_hot_enc.fit_transform(X).toarray()
-
-X = X[:, 1:]
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
-
-scaler = StandardScaler()
-X_train = scaler.fit_transform(X_train)
-X_test = scaler.transform(X_test)
 
 # classifier1 = Sequential()
 #
@@ -75,7 +50,33 @@ def buildclassifier():
     return classifier1
 
 
-classifier1 = KerasClassifier(build_fn=buildclassifier, epochs=100, batch_size=10)
-accuracies = cross_val_score(estimator=classifier1, X=X_train, y=y_train, cv=10)
+if __name__ == '__main__':
+    dataset = pd.read_csv("Datasets/Churn_Modelling.csv")
+    dataset.head()
 
-print(accuracies)
+    dataset.info()
+
+    X = dataset.iloc[:, [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]].values
+
+    y = dataset.iloc[:, 13].values
+
+    label_enc_X_country = LabelEncoder()
+    X[:, 1] = label_enc_X_country.fit_transform(X[:, 1])
+
+    label_enc_X_gender = LabelEncoder()
+    X[:, 2] = label_enc_X_gender.fit_transform(X[:, 2])
+
+    one_hot_enc = OneHotEncoder(categorical_features=[1])
+    X = one_hot_enc.fit_transform(X).toarray()
+
+    X = X[:, 1:]
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
+    scaler = StandardScaler()
+    X_train = scaler.fit_transform(X_train)
+    X_test = scaler.transform(X_test)
+
+    classifier1 = KerasClassifier(build_fn=buildclassifier, epochs=100, batch_size=10)
+    accuracies = cross_val_score(estimator=classifier1, X=X_train, y=y_train, cv=10, n_jobs=-1)
+    print(accuracies)
