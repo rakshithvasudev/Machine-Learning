@@ -16,3 +16,5 @@ Suggests movies based on similar interests from other users.
 ## Natural Language Processing - Classifying Spam or Ham Texts
  On a whole bunch of corpus, the classifier model uses NLP to regard an incoming text as Spam or Ham. 
 
+## Unsupervised learning - categorizing universites as Private or Public 
+Uses unsupervised learning to group the given universities in the dataset to be regarded as either private or public.
