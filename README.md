@@ -14,5 +14,5 @@ Given Certain features of a specific female individual this model predicts wheth
 Suggests movies based on similar interests from other users. 
 
 ## Natural Language Processing - Classifying Spam or Ham Texts
- On a whole bunch of corpus, the classifier uses NLP to regard an incoming text as Spam or Ham. 
+ On a whole bunch of corpus, the classifier model uses NLP to regard an incoming text as Spam or Ham. 
 
