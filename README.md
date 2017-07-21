@@ -1,4 +1,4 @@
-<img src=https://github.com/rakshithvasudev/Machine-Learning/blob/master/ml%20projects%20logo.png  width=750/> 
+<img src=https://github.com/rakshithvasudev/Machine-Learning/blob/master/ml%20projects%20logo.png  width=200/> 
 
 
 # Some of My Machine-Learning Projects
