@@ -10,8 +10,8 @@ Includes two price predictors and behavior predictors, where the default sklearn
 ## Cancer - Predicting if breast cancer is Malignant or Benign
 Given Certain features of a specific female individual this model predicts whether the individual's cancer is malignant or benign. Uses SVM and standard scaling.
 
-## Cancer - Predicting if breast cancer is Malignant or Benign
-Given Certain features of a specific female individual this model predicts whether the individual's cancer is malignant or benign. Uses SVM and standard scaling.
+## Recommender System
+Suggests movies based on similar interests from other users. 
 
 ## Natural Language Processing - Classifying Spam or Ham Texts
  On a whole bunch of corpus, the classifier uses NLP to regard an incoming text as Spam or Ham. 
