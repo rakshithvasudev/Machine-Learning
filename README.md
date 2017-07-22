@@ -1,7 +1,8 @@
+# Some of My Machine-Learning Projects
 <p align="center"><img src=https://github.com/rakshithvasudev/Machine-Learning/blob/master/ml%20projects%20logo.png  width=200/></p>
 
 
-# Some of My Machine-Learning Projects
+
 Here are some of my ML projects. This even includes my Kaggle solutions too. 
 
 ## Gender Classifer 
