@@ -14,6 +14,7 @@ from sklearn.model_selection import cross_val_score
 
 
 # classifier1 = Sequential()
+# classifier = Sequential()
 #
 # classifier1.add(Dense(units=6, activation='relu', input_dim=11, bias_initializer='uniform'))
 #
